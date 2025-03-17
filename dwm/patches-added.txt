@@ -1,0 +1,9 @@
+These are the patches I added:
+1. statuscolours
+2. noborder
+3. shiftview
+4. centredfloating
+5. scratchpad
+6. attachaside
+7. nopadderbar
+8. fullgaps (unsure)
