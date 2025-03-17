@@ -63,9 +63,12 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	// { run_command, ": %4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ cpu_perc,     "[CPU  %s%%]   ", NULL	  },
-	{ ram_perc,     "[RAM  %s%%]   ", NULL	  },
-  { battery_perc, "[BAT %s%%]     ","BAT0"  },  
-	{ datetime, "%s",           "%a %b %d %r" },
+  // TODO: show similar to temple os ref, mem, and cpu
+  // audio
+  { run_command, "[VOL: %s] ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+  // memory
+  { ram_perc, "[MEM: %s%] ", NULL }, /* displays RAM usage */
+  { battery_perc, "[BAT %s%] ", "BAT0" }, /* displays battery percentage */
+  { cpu_perc, "[CPU %s%] ", NULL }, /* displays CPU usage */
+  { datetime, "%s",           "%a %b %d %r" },
 };
